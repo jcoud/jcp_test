@@ -33,15 +33,6 @@ public class init {
 
     public static Item jcm_tab_logo;
 
-    public static CreativeTabs tabJCM = new CreativeTabs("jcm_tab") {
-        @Override
-        public Item getTabIconItem() {
-            return new ItemStack(jcm_tab_logo).getItem();
-        }
-    };
-
-
-
     @Mod.EventHandler
     public void preInint(FMLPreInitializationEvent event) {
         System.out.println("JCM PRE INIT. STEP 1");
@@ -58,4 +49,14 @@ public class init {
     public void postInint(FMLPostInitializationEvent event) {
         System.out.println("JCM POST INIT. STEP 3");
     }
+
+
+    public static CreativeTabs tabJCM = new CreativeTabs("jcm_tab") {
+        @Override
+        public Item getTabIconItem() {
+            return new ItemStack(jcmBlocksInit.test_block_1).getItem();
+        }
+    };
+
+
 }

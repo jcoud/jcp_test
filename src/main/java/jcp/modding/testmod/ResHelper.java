@@ -16,31 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO;
+package jcp.modding.testmod;
 
-import jcp.modding.testmod.IGO.blocks.TestBlock1;
-import jcp.modding.testmod.IGO.blocks.TestBlock2;
-import jcp.modding.testmod.RegHelper;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+public class ResHelper {
 
+    public static String jcm = "jcm";
 
-public class jcmBlocksInit {
-
-    public static Block test_block_1;
-    public static Block test_block_2;
-
-    public static void init() {
-
-        test_block_1 = new TestBlock1(Material.wood, 5f, 10f, "test_block_1", "axe", 3, Block.soundTypeWood);
-        reg(test_block_1);
-        test_block_2 = new TestBlock2(Material.wood, 5f, 10f, "test_block_2", "axe", 3, Block.soundTypeWood);
-        reg(test_block_2);
-
-    }
-
-    public static void reg(Block block) {
-        RegHelper.reg(block);
+    public static String getResourceName(String name) {
+        return jcm + ":" + name;
     }
 
 }
