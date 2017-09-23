@@ -1,14 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "jcm",
+  "name": "Jcoud's Test Mod",
+  "description": "For learning experience",
+  "version": "0.1a",
+  "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Jcoud"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

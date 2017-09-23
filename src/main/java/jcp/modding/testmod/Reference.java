@@ -19,4 +19,9 @@
 package jcp.modding.testmod;
 
 public class Reference {
+
+    public static final String MODID = "jcm";
+    public static final String NAME = "Jcoud's test mod";
+    public static final String VERSION = "1.7.10-v.0.1";
+    public static final String ACCEPTED_VERION = "1.7.10";
 }

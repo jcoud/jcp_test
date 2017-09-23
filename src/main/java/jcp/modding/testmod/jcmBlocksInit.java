@@ -18,28 +18,5 @@
 
 package jcp.modding.testmod;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.Event;
-
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERION)
-public class init {
-
-
-    @Mod.EventHandler
-    public void preInint(FMLPreInitializationEvent event) {
-        System.out.println("JCM PRE INIT. STEP 1");
-    }
-
-    @Mod.EventHandler
-    public void Inint(FMLInitializationEvent event) {
-        System.out.println("JCM INIT. STEP 2");
-    }
-
-    @Mod.EventHandler
-    public void postInint(FMLPostInitializationEvent event) {
-        System.out.println("JCM POST INIT. STEP 3");
-    }
+public class jcmBlocksInit {
 }
