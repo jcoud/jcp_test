@@ -16,8 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod;
+package jcp.modding.testmod.IGO.blocks;
 
-public class TestMod {
+import jcp.modding.testmod.Reference;
+import jcp.modding.testmod.init;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.Block;
 
+public class TestBlock1 extends Block {
+
+    public TestBlock1(Material material, float hardness, float resistance, String name, String tool, int lcl, Block.SoundType soundType) {
+        super(material);
+        setCreativeTab(init.tabJCM);
+        setHardness(hardness);
+        setResistance(resistance);
+        setBlockName(name);
+        setHarvestLevel(tool, lcl);
+        setBlockTextureName(Reference.MODID + ":" + name);
+        setStepSound(soundType);
+    }
 }

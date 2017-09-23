@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod;
+package jcp.modding.testmod.IGO;
 
-public class jcmBlocksInit {
+public class jcmItemsInit {
 }

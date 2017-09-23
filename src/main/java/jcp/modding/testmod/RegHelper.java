@@ -18,5 +18,17 @@
 
 package jcp.modding.testmod;
 
-public class jcmItemsInit {
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+
+public class RegHelper {
+
+    public static void reg(Block block) {
+        GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
+    }
+
+    public static void reg(Item item) {
+        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+    }
 }

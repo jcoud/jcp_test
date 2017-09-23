@@ -16,46 +16,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod;
+package jcp.modding.testmod.IGO;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.Event;
-import jcp.modding.testmod.IGO.jcmBlocksInit;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSION)
-public class init {
-
-    public static Item jcm_tab_logo;
-
-    public static CreativeTabs tabJCM = new CreativeTabs("jcm_tab") {
-        @Override
-        public Item getTabIconItem() {
-            return new ItemStack(jcm_tab_logo).getItem();
-        }
-    };
+import jcp.modding.testmod.IGO.blocks.TestBlock1;
+import jcp.modding.testmod.RegHelper;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
 
+public class jcmBlocksInit {
 
-    @Mod.EventHandler
-    public void preInint(FMLPreInitializationEvent event) {
-        System.out.println("JCM PRE INIT. STEP 1");
+    public static Block test_block_1;
 
-        jcmBlocksInit.init();
+    public static void init() {
+
+        test_block_1 = new TestBlock1(Material.wood, 1f, 10f, "test_block_1", "pickaxe", 1, Block.soundTypeWood);
+        reg(test_block_1);
+
     }
 
-    @Mod.EventHandler
-    public void Inint(FMLInitializationEvent event) {
-        System.out.println("JCM INIT. STEP 2");
+    public static void reg(Block block) {
+        RegHelper.reg(block);
     }
 
-    @Mod.EventHandler
-    public void postInint(FMLPostInitializationEvent event) {
-        System.out.println("JCM POST INIT. STEP 3");
-    }
 }
