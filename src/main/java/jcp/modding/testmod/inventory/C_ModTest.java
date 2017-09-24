@@ -19,4 +19,5 @@
 package jcp.modding.testmod.inventory;
 
 public class C_ModTest extends ContainerBase {
+
 }
