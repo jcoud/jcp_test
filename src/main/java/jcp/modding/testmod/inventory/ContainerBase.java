@@ -16,14 +16,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO.TIleEntity;
+package jcp.modding.testmod.inventory;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.Slot;
 
-public abstract class TestBlockTileEnt extends BlockContainer {
+public class ContainerBase extends Container {
 
-    public TestBlockTileEnt(Material material) {
-        super(material);
+    @Override
+    public boolean canInteractWith(EntityPlayer player){
+        return false;
+    }
+
+    protected void addPlayerSlots(InventoryPlayer playerInvernt, int x, int y, int slotIndexStart){
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 9; j++){
+                addSlotToContainer(new Slot(playerInvernt, j + i * 9 + slotIndexStart + 9, x + j * 10, y + i * 10));
+            }
+        }
+
+        for (int i = 0; i < 9; i++){
+            addSlotToContainer(new Slot(playerInvernt, i + slotIndexStart, x + i * 10, y + 142));
+        }
     }
 }

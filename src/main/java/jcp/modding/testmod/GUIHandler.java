@@ -16,14 +16,36 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO.TIleEntity;
+package jcp.modding.testmod;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
+import cpw.mods.fml.common.network.IGuiHandler;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import org.omg.CORBA.Object;
 
-public abstract class TestBlockTileEnt extends BlockContainer {
+public class GUIHandler implements IGuiHandler {
 
-    public TestBlockTileEnt(Material material) {
-        super(material);
+    public enum GuiIDs{
+        TEST_ID;
+    }
+
+
+    @Override
+    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        switch (GuiIDs.values()[ID]){
+            case TEST_ID:
+                return null;
+        }
+        throw new IllegalArgumentException("[SERVER] * No GUI with ID " + ID + " *");
+    }
+
+    @Override
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        switch (GuiIDs.values()[ID]){
+            case TEST_ID:
+                return null;
+        }
+        throw new IllegalArgumentException("[CLIENT] * No GUI with ID " + ID + " *");
     }
 }
+

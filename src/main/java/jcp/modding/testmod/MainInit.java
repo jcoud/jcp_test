@@ -23,6 +23,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import jcp.modding.testmod.IGO.jcmBlocks_init;
 import jcp.modding.testmod.IGO.jcmTileEntitys_init;
 import jcp.modding.testmod.proxy.iProxy;
@@ -46,6 +47,8 @@ public class MainInit {
 
         jcmBlocks_init.init();
         jcmTileEntitys_init.init();
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
     }
 
     @Mod.EventHandler

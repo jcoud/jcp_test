@@ -16,14 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO.TIleEntity;
+package jcp.modding.testmod.inventory;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
-
-public abstract class TestBlockTileEnt extends BlockContainer {
-
-    public TestBlockTileEnt(Material material) {
-        super(material);
-    }
+public class C_ModTest extends ContainerBase {
 }
