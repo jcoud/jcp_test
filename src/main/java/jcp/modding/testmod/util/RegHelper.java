@@ -16,11 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod;
+package jcp.modding.testmod.util;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
 
 public class RegHelper {
 
@@ -30,5 +31,9 @@ public class RegHelper {
 
     public static void reg(Item item) {
         GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+    }
+
+    public static void reg(Class<? extends TileEntity> teClass, String name) {
+        GameRegistry.registerTileEntity(teClass, name);
     }
 }

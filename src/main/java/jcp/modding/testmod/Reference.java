@@ -20,8 +20,13 @@ package jcp.modding.testmod;
 
 public class Reference {
 
-    public static final String MODID = "jcm";
+    public static final String MOD_ID = "jcm";
     public static final String NAME = "Jcoud's test mod";
     public static final String VERSION = "1.7.10-v.0.1";
     public static final String ACCEPTED_VERSION = "1.7.10";
+    public static final String DEPENDENCIES = "required-after:Forge@[10.13.4.1614]";
+
+    public static final String CLIENT_PROXY_CLASS = "jcp.modding.testmod.proxy.ClientProxy";
+    public static final String SERVER_PROXY_CLASS = "jcp.modding.testmod.proxy.ServerProxy";
+
 }

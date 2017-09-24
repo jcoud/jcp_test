@@ -16,23 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO.blocks;
+package jcp.modding.testmod.IGO;
 
-import jcp.modding.testmod.MainInit;
+import jcp.modding.testmod.IGO.TIleEntity.TE_ModTestTE;
 import jcp.modding.testmod.Reference;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import static jcp.modding.testmod.util.RegHelper.reg;
 
-public class TestBlock2 extends Block {
+public final class jcmTileEntitys_init {
 
-    public TestBlock2(Material material, float hardness, float resistance, String name, String tool, int lvl, Block.SoundType soundType) {
-        super(material);
-        setCreativeTab(MainInit.tabJCM);
-        setHardness(hardness);
-        setResistance(resistance);
-        setBlockName(name);
-        setHarvestLevel(tool, lvl);
-        setBlockTextureName(Reference.MOD_ID + ":" + name);
-        setStepSound(soundType);
+    public static void init() {
+        reg(TE_ModTestTE.class, (String) Reference.MOD_ID + "test_tile_entity");
     }
 }

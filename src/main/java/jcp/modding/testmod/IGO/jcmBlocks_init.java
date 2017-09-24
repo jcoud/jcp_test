@@ -16,47 +16,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod;
+package jcp.modding.testmod.IGO;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.Event;
-import jcp.modding.testmod.IGO.jcmBlocksInit;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import jcp.modding.testmod.IGO.blocks.B_ModTestTE;
+import jcp.modding.testmod.IGO.blocks.TestBlock1;
+import jcp.modding.testmod.IGO.blocks.TestBlock2;
+import jcp.modding.testmod.util.RegHelper;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSION)
-public class init {
 
-    public static Item jcm_tab_logo;
+public class jcmBlocks_init {
 
-    @Mod.EventHandler
-    public void preInint(FMLPreInitializationEvent event) {
-        System.out.println("JCM PRE INIT. STEP 1");
+    public static Block test_block_1;
+    public static Block test_block_2;
 
-        jcmBlocksInit.init();
+    public static Block b_modtestTE;
+
+    public static void init() {
+
+        test_block_1 = new TestBlock1(Material.iron, 5f, 10f, "test_block_1", "axe", 3, Block.soundTypeMetal);
+        reg(test_block_1);
+        test_block_2 = new TestBlock2(Material.iron, 5f, 10f, "test_block_2", "axe", 3, Block.soundTypeMetal);
+        reg(test_block_2);
+
+        b_modtestTE = new B_ModTestTE(Material.iron, 10f, 20f,"b_modtestTE", "pickaxe", 3, Block.soundTypeGlass);
+        reg(b_modtestTE);
+
     }
 
-    @Mod.EventHandler
-    public void Inint(FMLInitializationEvent event) {
-        System.out.println("JCM INIT. STEP 2");
+    public static void reg(Block block) {
+        RegHelper.reg(block);
     }
-
-    @Mod.EventHandler
-    public void postInint(FMLPostInitializationEvent event) {
-        System.out.println("JCM POST INIT. STEP 3");
-    }
-
-
-    public static CreativeTabs tabJCM = new CreativeTabs("jcm_tab") {
-        @Override
-        public Item getTabIconItem() {
-            return new ItemStack(jcmBlocksInit.test_block_1).getItem();
-        }
-    };
-
 
 }

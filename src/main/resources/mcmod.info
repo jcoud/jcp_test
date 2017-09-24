@@ -1,14 +1,14 @@
 [
 {
-  "modid": "jcm",
-  "name": "Jcoud's Test Mod",
+  "modid": "?4jcm",
+  "name": "?3Jcoud's Test Mod",
   "description": "For learning experience",
-  "version": "0.1a",
+  "version": "?60.1a",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
   "authorList": ["Jcoud"],
-  "logoFile": "",
+  "logoFile": "/assets/logo.png",
   "screenshots": [],
   "dependencies": []
 }

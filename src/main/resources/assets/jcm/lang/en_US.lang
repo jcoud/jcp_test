@@ -1,4 +1,5 @@
 tile.test_block_1.name="Test Block 1"
 tile.test_block_2.name="Test Block 2"
+tile.b_modtestTE.name="Test TileEntity Block"
 
 itemGroup.jcm_tab="JCM TEST MOD"

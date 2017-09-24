@@ -16,23 +16,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO.blocks;
+package jcp.modding.testmod.util;
 
-import jcp.modding.testmod.MainInit;
+import cpw.mods.fml.common.FMLLog;
 import jcp.modding.testmod.Reference;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import org.apache.logging.log4j.Level;
 
-public class TestBlock2 extends Block {
+public class logHelper {
 
-    public TestBlock2(Material material, float hardness, float resistance, String name, String tool, int lvl, Block.SoundType soundType) {
-        super(material);
-        setCreativeTab(MainInit.tabJCM);
-        setHardness(hardness);
-        setResistance(resistance);
-        setBlockName(name);
-        setHarvestLevel(tool, lvl);
-        setBlockTextureName(Reference.MOD_ID + ":" + name);
-        setStepSound(soundType);
+    public static void log(Level loglevel, Object obj){
+        FMLLog.log(Reference.MOD_ID, loglevel, String.valueOf(obj));
     }
+
+    public static void all(Object obj) { log(Level.ALL, obj); }
+    public static void debug(Object obj) { log(Level.DEBUG, obj); }
+    public static void error(Object obj) { log(Level.ERROR, obj); }
+    public static void fatal(Object obj) { log(Level.FATAL, obj); }
+    public static void info(Object obj) { log(Level.INFO, obj); }
+    public static void trace(Object obj) { log(Level.TRACE, obj); }
+    public static void off(Object obj) { log(Level.OFF, obj); }
+    public static void warn(Object obj) { log(Level.WARN, obj); }
 }

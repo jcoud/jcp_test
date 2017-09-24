@@ -16,7 +16,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.                          *
  **************************************************************************************************/
 
-package jcp.modding.testmod.IGO;
+package jcp.modding.testmod.IGO.blocks;
 
-public class jcmItemsInit {
+import jcp.modding.testmod.IGO.TIleEntity.TE_ModTestTE;
+import jcp.modding.testmod.IGO.TIleEntity.TestBlockTileEnt;
+import jcp.modding.testmod.MainInit;
+import jcp.modding.testmod.Reference;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+
+public class B_ModTestTE extends TestBlockTileEnt {
+
+
+    public B_ModTestTE(Material material, float hardness, float resistance, String name, String tool, int lvl, Block.SoundType soundType) {
+        super(material);
+        setCreativeTab(MainInit.tabJCM);
+        setHardness(hardness);
+        setResistance(resistance);
+        setBlockName(name);
+        setHarvestLevel(tool, lvl);
+        setBlockTextureName(Reference.MOD_ID + ":" + name);
+        setStepSound(soundType);
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TE_ModTestTE();
+    }
 }

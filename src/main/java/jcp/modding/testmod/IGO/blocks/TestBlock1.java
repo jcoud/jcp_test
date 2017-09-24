@@ -18,8 +18,8 @@
 
 package jcp.modding.testmod.IGO.blocks;
 
+import jcp.modding.testmod.MainInit;
 import jcp.modding.testmod.Reference;
-import jcp.modding.testmod.init;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.Block;
 
@@ -27,12 +27,12 @@ public class TestBlock1 extends Block {
 
     public TestBlock1(Material material, float hardness, float resistance, String name, String tool, int lvl, Block.SoundType soundType) {
         super(material);
-        setCreativeTab(init.tabJCM);
+        setCreativeTab(MainInit.tabJCM);
         setHardness(hardness);
         setResistance(resistance);
         setBlockName(name);
         setHarvestLevel(tool, lvl);
-        setBlockTextureName(Reference.MODID + ":" + name);
+        setBlockTextureName(Reference.MOD_ID + ":" + name);
         setStepSound(soundType);
     }
 }
